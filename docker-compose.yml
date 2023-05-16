@@ -1,0 +1,16 @@
+version: '3'
+
+networks:
+  embulk_john_default:
+    driver: bridge
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_DB: s3Challenge
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    network_mode: bridge

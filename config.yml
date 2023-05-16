@@ -1,0 +1,43 @@
+in:
+  type: s3
+  bucket: teste-embulk-john
+  region: us-east-1
+  path_prefix: export
+  access_key_id: 
+  secret_access_key: 
+  parser:
+    type: csv
+    delimiter: ","
+    charset: UTF-8
+    columns:
+      - {name: cd_estabel, type: string}
+      - {name: old_trade_area, type: string}
+      - {name: current_trade_area, type: string}
+      - {name: cr_ref, type: string}
+      - {name: km_mean_ref, type: string}
+      - {name: latitude, type: string}
+      - {name: longitude, type: string}
+      - {name: fl_rodovia, type: string}
+      - {name: endereco, type: string}
+      - {name: cnpj, type: string}
+      - {name: marca_rede, type: string}
+      - {name: bairro, type: string}
+      - {name: cidade, type: string}
+      - {name: uf, type: string}
+      - {name: val_aut_3meses, type: string}
+      - {name: t_litros_3meses, type: string}
+      - {name: t_trans_3meses, type: string}
+      - {name: ativo, type: string}
+
+
+out:
+  type: postgresql
+  host: embulk_john-db-1
+  port: 5432
+  user: postgres
+  password: postgres
+  database: s3Challenge
+  table: test_s3
+  mode: insert_direct
+        
+  
