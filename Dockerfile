@@ -8,8 +8,9 @@ RUN apk --update add --virtual build-dependencies curl \
     && apk del build-dependencies
 RUN apk --update add libc6-compat
 
-RUN ~/.embulk/bin/embulk gem install embulk-input-s3
+RUN ~/.embulk/bin/embulk gem install embulk-input-postgresql
 RUN ~/.embulk/bin/embulk gem install embulk-output-postgresql
+RUN ~/.embulk/bin/embulk gem install embulk-filter-to_csv
 
 COPY entrypoint.sh /entrypoint.sh
 COPY config.yml /config.yml
