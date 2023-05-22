@@ -11,7 +11,7 @@ RUN apk --update add libc6-compat
 RUN ~/.embulk/bin/embulk gem install embulk-input-postgresql
 RUN ~/.embulk/bin/embulk gem install embulk-output-postgresql
 
-# COPY entrypoint.sh /entrypoint.sh
-# COPY config.yml /config.yml
+COPY entrypoint.sh /entrypoint.sh
+COPY config.yml /config.yml
 
-# ENTRYPOINT ["sh", "/entrypoint.sh"]
+ENTRYPOINT ["sh", "/entrypoint.sh"]
