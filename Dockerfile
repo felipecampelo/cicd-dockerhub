@@ -1,4 +1,4 @@
-# FROM openjdk:8-jre-alpine
+FROM openjdk:8-jre-alpine
 
 # ARG EMBULK_VER=${EMBULK_VER:-"latest"}
 
@@ -16,7 +16,7 @@
 
 # ENTRYPOINT ["sh", "/entrypoint.sh"]
 
-FROM amazoncorretto:8
+# FROM amazoncorretto:8
 
 ARG EMBULK_VERSION=${EMBULK_VERSION:-"latest"}
 
