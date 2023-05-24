@@ -16,7 +16,7 @@
 
 # ENTRYPOINT ["sh", "/entrypoint.sh"]
 
-FROM amazoncorretto:8
+FROM --platform=linux/amd64 amazoncorretto:8
 
 ARG EMBULK_VERSION=${EMBULK_VERSION:-"latest"}
 
