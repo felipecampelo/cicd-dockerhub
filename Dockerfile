@@ -21,12 +21,12 @@ FROM openjdk:8-jre-alpine
 ARG EMBULK_VERSION=${EMBULK_VERSION:-"latest"}
 
 
-RUN yum -y update &&\
-    yum -y install unzip &&\
-    amazon-linux-extras install ruby2.6 &&\
-    yum -y clean metadata &&\
-    yum -y install ruby ruby-devel &&\
-    curl --create-dirs -o /opt/embulk/embulk -L "https://dl.embulk.org/embulk-${EMBULK_VERSION}.jar"
+# RUN yum -y update &&\
+#     yum -y install unzip &&\
+#     amazon-linux-extras install ruby2.6 &&\
+#     yum -y clean metadata &&\
+#     yum -y install ruby ruby-devel &&\
+RUN curl --create-dirs -o /opt/embulk/embulk -L "https://dl.embulk.org/embulk-${EMBULK_VERSION}.jar"
     
 WORKDIR /opt/embulk
 
