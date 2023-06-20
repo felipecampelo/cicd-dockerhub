@@ -2,9 +2,9 @@ FROM amazoncorretto:8
 
 ARG EMBULK_VERSION=${EMBULK_VERSION:-"latest"}
 
-RUN apt update && \
-    apt install -y python3 && \
-    apt install -y awscli
+# RUN apt update && \
+#     apt install -y python3 && \
+#     apt install -y awscli
 
 RUN yum -y update &&\
     yum -y install unzip &&\
